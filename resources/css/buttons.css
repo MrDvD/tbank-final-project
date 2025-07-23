@@ -1,0 +1,82 @@
+@import "fonts.css";
+@import "colors.css";
+
+/* @property - read about it */
+
+.button {
+  --button-background: var(--background-neutral-1);
+  --button-text: var(--text-primary-on-accent);
+
+  height: 44px;
+  flex: 1 1 auto;
+
+  background-color: var(--button-background);
+  border: none;
+
+  color: var(--button-text);
+  font-family: "Neue Haas Unica";
+  font-weight: 400;
+
+  &.primary {
+    --button-background: var(--day-background-accent-1);
+    --button-text: var(--text-primary-on-accent-1);
+
+    padding: 10px;
+    border-radius: 8px;
+
+    font-size: 15px;
+  }
+
+  &.secondary {
+    --button-background: var(--background-neutral-1);
+    --button-text: var(--text-action-1);
+
+    padding: 10px;
+    border-radius: 8px;
+
+    font-size: 15px;
+  }
+
+  &.outline {
+
+  }
+
+  &.day {
+
+  }
+
+  &.tag {
+
+  }
+
+  /* &:disabled {
+  } */
+
+  &:not(:disabled) {
+    @media screen and (hover: hover) {
+      &:hover {
+        &.primary {
+          --button-background: var(--day-background-accent-2);
+        }
+
+        &.secondary {
+          --button-background: var(--background-neutral-2);
+        }
+      }
+    }
+
+    &:active {
+      &.primary {
+        --button-background: var(--day-background-accent-3);
+      }
+
+      &.secondary {
+        --button-background: var(--background-neutral-3);
+      }
+    }
+  }
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    transition: border-color .2s linear, background-color .2s linear, color .2s linear;
+  }
+}

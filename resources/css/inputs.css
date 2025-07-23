@@ -1,0 +1,64 @@
+@import "colors.css";
+@import "fonts.css";
+
+.field-input {
+  --input-background: var(--background-neutral-2);
+  --input-border: transparent;
+
+  box-sizing: border-box;
+  flex: 1 1 auto;
+
+  border-radius: 10px;
+  border: thin solid var(--input-border);
+  background-color: var(--input-background);
+  outline: none;
+
+  font-family: "Neue Haas Unica";
+  font-weight: 400;
+  color: var(--text-primary-1);
+
+  &::placeholder {
+    color: var(--text-secondary-1);
+  }
+
+  &.small {
+    --input-background: var(--background-neutral-2);
+    --input-border: transparent;
+
+    height: 32px;
+    padding: 0 10px;
+    border-radius: 8px;
+
+    font-size: 13px;
+  }
+
+  &.medium {
+    --input-background: var(--background-neutral-2);
+    --input-border: transparent;
+
+    height: 56px;
+    padding: 6px 16px;
+    border-radius: 12px;
+
+    font-size: 15px;
+  }
+
+  &.large {
+    --input-background: var(--background-neutral-2);
+    --input-border: transparent;
+
+    padding: 16px 16px;
+    border-radius: 12px;
+
+    font-size: 15px;
+  }
+
+  &:focus {
+    --input-background: var(--background-neutral-1);
+    --input-border: var(--background-neutral-3);
+  }
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    transition: border-color .2s linear, background-color .2s linear, color .2s linear;
+  }
+}
