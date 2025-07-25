@@ -1,5 +1,6 @@
 @import "body-content.css";
 @import "header.css";
+@import "window.css";
 
 * {
   padding: 0;

@@ -5,6 +5,7 @@
   --input-background: var(--background-neutral-2);
   --input-border: transparent;
 
+  width: stretch;
   box-sizing: border-box;
   flex: 1 1 auto;
 
@@ -13,8 +14,6 @@
   background-color: var(--input-background);
   outline: none;
 
-  font-family: "Neue Haas Unica";
-  font-weight: 400;
   color: var(--text-primary-1);
 
   &::placeholder {
@@ -22,9 +21,6 @@
   }
 
   &.small {
-    --input-background: var(--background-neutral-2);
-    --input-border: transparent;
-
     height: 32px;
     padding: 0 10px;
     border-radius: 8px;
@@ -33,9 +29,6 @@
   }
 
   &.medium {
-    --input-background: var(--background-neutral-2);
-    --input-border: transparent;
-
     height: 56px;
     padding: 6px 16px;
     border-radius: 12px;
@@ -44,11 +37,10 @@
   }
 
   &.large {
-    --input-background: var(--background-neutral-2);
-    --input-border: transparent;
-
     padding: 16px 16px;
     border-radius: 12px;
+    min-height: 116px;
+    resize: vertical;
 
     font-size: 15px;
   }

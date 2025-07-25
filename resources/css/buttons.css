@@ -6,16 +6,26 @@
 .button {
   --button-background: var(--background-neutral-1);
   --button-text: var(--text-primary-on-accent);
+  --button-border: transparent;
 
-  height: 44px;
-  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
 
   background-color: var(--button-background);
-  border: none;
+  border: thin solid var(--button-border);
+  outline: none;
 
   color: var(--button-text);
-  font-family: "Neue Haas Unica";
-  font-weight: 400;
+
+  &.small {
+    height: 32px;
+    width: fit-content;
+  }
+
+  &.medium {
+    height: 44px;
+    flex: 1 1 auto;
+  }
 
   &.primary {
     --button-background: var(--day-background-accent-1);
@@ -28,7 +38,6 @@
   }
 
   &.secondary {
-    --button-background: var(--background-neutral-1);
     --button-text: var(--text-action-1);
 
     padding: 10px;
@@ -37,11 +46,22 @@
     font-size: 15px;
   }
 
-  &.outline {
+  &.clear {
+    --button-background: transparent;
+    --button-text: var(--text-secondary-1);
 
+    height: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    text-decoration: none;
   }
 
-  &.day {
+  &.outline {
 
   }
 
@@ -55,14 +75,16 @@
   &:not(:disabled) {
     @media screen and (hover: hover) {
       &:hover {
+        --button-background: var(--background-neutral-2);
+
         &.primary {
           --button-background: var(--day-background-accent-2);
         }
-
-        &.secondary {
-          --button-background: var(--background-neutral-2);
-        }
       }
+    }
+
+    &:focus {
+      --button-border: var(--background-neutral-3);
     }
 
     &:active {
@@ -72,6 +94,10 @@
 
       &.secondary {
         --button-background: var(--background-neutral-3);
+      }
+
+      &.clear {
+        --button-border: var(--background-neutral-3);
       }
     }
   }

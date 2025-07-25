@@ -1,0 +1,62 @@
+.card {
+  height: fit-content;
+  width: stretch;
+  padding: 0 24px;
+
+  background-color: var(--background-elevation-1);
+  border-radius: 25px;
+  box-shadow: 0 6px 34px var(--shadow-medium-1);
+
+  .card-header {
+    display: flex;
+    box-sizing: border-box;
+    padding: 20px 0;
+    gap: 10px;
+    align-items: center;
+
+    font-family: "Tinkoff Sans";
+    font-size: 24px;
+    font-weight: 500;
+
+    a {
+      display: inherit;
+      gap: inherit;
+
+      align-items: inherit;
+
+      text-decoration: inherit;
+      color: inherit;
+    }
+
+    .card-profile-pic {
+      width: 24px;
+      height: 24px;
+
+      border-radius: 100%;
+    }
+
+    .card-remove-icon {
+      height: 16px;
+    }
+  }
+
+  .card-content {
+    padding-bottom: 24px;
+    box-sizing: border-box;
+  }
+
+  .card-footer {
+    display: flex;
+    padding-bottom: 24px;
+    gap: 12px;
+
+    .button {
+      flex: 0 0 auto;
+      gap: 2px;
+
+      p {
+        padding: 2px 6px;
+      }
+    }
+  }
+}

@@ -1,9 +1,15 @@
+@import "fonts.css";
+
 #bodyContent {
   flex: 1 1 auto;
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 824px 1fr;
   grid-template-rows: auto 1fr;
   grid-template-areas: "left-header-side header right-header-side" "left-window-side window right-window-side";
+
+  font-family: "Neue Haas Unica";
+  font-weight: 400;
+  font-size: 15px;
 }
