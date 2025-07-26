@@ -1,0 +1,8 @@
+.window-root {
+  grid-area: window;
+  max-width: 824px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=window.css.map */
