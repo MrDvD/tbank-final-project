@@ -28,35 +28,36 @@
   }
 }
 
-  .card-header {
-    display: flex;
-    box-sizing: border-box;
-    padding: 20px 0;
-    gap: 10px;
-    align-items: center;
+.card-header {
+  display: flex;
+  box-sizing: border-box;
+  padding: 20px 0;
+  gap: 10px;
+  align-items: center;
 
-    font-family: "Tinkoff Sans";
-    font-size: 24px;
-    font-weight: 500;
+  font-family: "Tinkoff Sans";
+  font-size: 24px;
+  font-weight: 500;
 
-    a {
-      display: inherit;
-      gap: inherit;
+  a {
+    display: inherit;
+    gap: inherit;
 
-      align-items: inherit;
+    align-items: inherit;
 
-      text-decoration: inherit;
-      color: inherit;
-    }
-
-    .card-profile-pic {
-      width: 24px;
-      height: 24px;
-
-      border-radius: 100%;
-    }
-
-    .card-remove-icon {
-      height: 16px;
-    }
+    text-decoration: inherit;
+    color: inherit;
   }
+
+  .card-profile-pic {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+
+    border-radius: 100%;
+  }
+
+  .card-remove-icon {
+    height: 16px;
+  }
+}

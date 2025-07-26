@@ -1,8 +1,6 @@
 @import "fonts.css";
 @import "colors.css";
 
-/* @property - read about it */
-
 .button {
   --button-background: var(--background-neutral-1);
   --button-text: var(--text-primary-on-accent);
@@ -25,30 +23,28 @@
   &.small {
     height: 32px;
     width: fit-content;
+
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 8px;
   }
 
   &.medium {
     height: 44px;
     flex: 1 1 auto;
+
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 8px;
   }
 
   &.primary {
     --button-background: var(--background-accent-1);
     --button-text: var(--text-primary-on-accent-1);
-
-    padding: 10px;
-    border-radius: 8px;
-
-    font-size: 15px;
   }
 
   &.secondary {
     --button-text: var(--text-action-1);
-
-    padding: 10px;
-    border-radius: 8px;
-
-    font-size: 15px;
 
     &.checkable {
       display: none;
@@ -74,6 +70,12 @@
         --button-border: var(--border-normal-1);
       }
     }
+  }
+
+  &.tertiary {
+    --button-background: transparent;
+    --button-text: var(--text-action-1);
+    --button-border: var(--border-normal-1);
   }
 
   &.clear {
@@ -115,6 +117,14 @@
     }
   }
 
+  &.accent {
+    --button-background: var(--background-accent-4);
+    --button-text: var(--text-primary-on-dark-1);
+
+    padding: 4px 8px;
+    border-radius: 8px;
+  }
+
   /* &:disabled {
   } */
 
@@ -130,6 +140,10 @@
         &.filter ~ .button-content {
           --button-background: var(--background-neutral-1);
         }
+
+        &.accent {
+          --button-background: var(--background-accent-5);
+        }
       }
     }
 
@@ -138,6 +152,8 @@
     }
 
     &:active, &:active ~ .button-content {
+      --button-background: var(--background-neutral-3);
+
       &.primary {
         --button-background: var(--background-accent-3);
       }
@@ -149,16 +165,16 @@
       &.clear {
         --button-border: var(--background-neutral-3);
       }
-    }
-  }
 
-  @media screen and (prefers-reduced-motion: no-preference) {
-    transition: border-color .2s linear, background-color .2s linear, color .2s linear;
+      &.accent {
+        --button-background: var(--background-accent-6);
+      }
+    }
   }
 }
 
-.button-content {
-  @media screen and (prefers-reduced-motion: no-preference) {
+@media screen and (prefers-reduced-motion: no-preference) {
+  .button, .button-content {
     transition: border-color .2s linear, background-color .2s linear, color .2s linear;
   }
 }
