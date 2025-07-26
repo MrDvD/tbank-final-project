@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 
   font-family: inherit;
   font-weight: inherit;
@@ -44,32 +45,9 @@
   }
 
   &.secondary {
+    --button-background: var(--background-neutral-1);
     --button-text: var(--text-action-1);
-
-    &.checkable {
-      display: none;
-
-      & ~ .button-content {
-        --button-background: var(--background-neutral-1);
-        --button-text: var(--text-action-1);
-        --button-border: transparent;
-
-        display: block;
-        padding: 10px;
-        border-radius: 8px;
-
-        background-color: var(--button-background);
-        border: 1px solid var(--button-border);
-        color: var(--button-text);
-
-        user-select: none;
-      }
-
-      &:checked ~ .button-content {
-        --button-background: transparent;
-        --button-border: var(--border-normal-1);
-      }
-    }
+    --button-border: transparent;
   }
 
   &.tertiary {
@@ -82,10 +60,6 @@
     --button-background: transparent;
     --button-text: var(--text-secondary-1);
 
-    height: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-
     display: flex;
     align-items: center;
     gap: 8px;
@@ -94,26 +68,14 @@
   }
 
   &.filter {
-    display: none;
+    --button-background: transparent;
+    --button-text: var(--text-primary-1);
+    --button-border: var(--background-accent-1);
 
-    & ~ .button-content {
-      --button-background: transparent;
-      --button-text: var(--text-primary-1);
+    border: 2px solid var(--button-border);
+
+    &.inactive {
       --button-border: var(--border-normal-1);
-
-      display: block;
-      padding: 10px;
-      border-radius: 8px;
-
-      background-color: var(--button-background);
-      border: 2px solid var(--button-border);
-      color: var(--button-text);
-
-      user-select: none;
-    }
-
-    &:checked ~ .button-content {
-      --button-border: var(--background-accent-1);
     }
   }
 
@@ -130,14 +92,14 @@
 
   &:not(:disabled) {
     @media screen and (hover: hover) {
-      &:hover, &:hover ~ .button-content {
+      &:hover {
         --button-background: var(--background-neutral-2);
 
         &.primary {
           --button-background: var(--background-accent-2);
         }
 
-        &.filter ~ .button-content {
+        &.filter {
           --button-background: var(--background-neutral-1);
         }
 
@@ -147,11 +109,21 @@
       }
     }
 
-    &:focus, &:focus ~ .button-content {
-      --button-border: var(--background-neutral-3);
+    &:focus {
+      --button-border: var(--border-normal-1);
+
+      &.filter {
+        &.inactive {
+          --button-border: var(--border-normal-2);
+        }
+
+        &:not(.inactive) {
+          --button-border: var(--background-accent-2);
+        }
+      }
     }
 
-    &:active, &:active ~ .button-content {
+    &:active {
       --button-background: var(--background-neutral-3);
 
       &.primary {
@@ -171,10 +143,8 @@
       }
     }
   }
-}
 
-@media screen and (prefers-reduced-motion: no-preference) {
-  .button, .button-content {
+  @media screen and (prefers-reduced-motion: no-preference) {
     transition: border-color .2s linear, background-color .2s linear, color .2s linear;
   }
 }
