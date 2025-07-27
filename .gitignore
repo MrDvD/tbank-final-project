@@ -1,5 +1,6 @@
-resources/png/
-resources/fonts/
-resources/svg/
+src/resources/png/
+src/resources/fonts/
+src/resources/svg/
 node_modules/
-*.map
+dist/
+tmp/

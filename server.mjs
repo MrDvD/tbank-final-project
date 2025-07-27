@@ -10,11 +10,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 fastify.register(await import('@fastify/static'), {
-  root: path.join(__dirname, 'public'),
+  root: path.join(__dirname, 'dist'),
 });
 
 fastify.get('/', function(_, reply) {
-  reply.sendFile('main/index.html');
+  return reply.sendFile('index.html', 'dist/main');
 });
 
 try {
