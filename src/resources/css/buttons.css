@@ -95,6 +95,8 @@
       &:hover {
         --button-background: var(--background-neutral-2);
 
+        cursor: pointer;
+
         &.primary {
           --button-background: var(--background-accent-2);
         }

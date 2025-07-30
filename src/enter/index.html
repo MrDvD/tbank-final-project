@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>T-News: Sign-up</title>
+  <title>T-News: Enter</title>
   <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js"></script>
 </head>
 <body>
 <div id="bodyContent">
@@ -17,7 +18,7 @@
     </section>
   </header>
   <span class="window-root">
-    <div class="window-box">
+    <form class="window-box" method="POST" action="/register">
       <header class="window-header">
         <p>Регистрация</p>
       </header>
@@ -40,7 +41,7 @@
           <p>Зарегистрироваться</p>
         </button>
       </footer>
-    </div>
+    </form>
   </span>
 </div>
 </body>

@@ -11,8 +11,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'src/main/index.html'),
-        profile: resolve(__dirname, 'src/profile/index.html'),
-        signup: resolve(__dirname, 'src/signup/index.html'),
+        user: resolve(__dirname, 'src/user/index.html'),
+        enter: resolve(__dirname, 'src/enter/index.html'),
         search_posts: resolve(__dirname, 'src/search_posts/index.html'),
         search_users: resolve(__dirname, 'src/search_users/index.html'),
       },
