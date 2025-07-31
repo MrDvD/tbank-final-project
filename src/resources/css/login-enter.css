@@ -1,7 +1,7 @@
-@import "../resources/css/inputs.css";
-@import "../resources/css/buttons.css";
-@import "../resources/css/fonts.css";
-@import "../resources/css/colors.css";
+@import "inputs.css";
+@import "buttons.css";
+@import "fonts.css";
+@import "colors.css";
 
 .window-root {
   .window-box {

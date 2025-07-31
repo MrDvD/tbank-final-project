@@ -1,6 +1,6 @@
 import postgres from 'postgres';
 
-function validateEnvironment() {
+function validateEnvironment(): boolean {
   for (const key of ["POSTGRES_HOST", "POSTGRES_USER", "POSTGRES_PASSWORD"]) {
     if (!(key in process.env)) {
       return false;
