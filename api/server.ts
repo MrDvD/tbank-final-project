@@ -76,17 +76,6 @@ fastify.get('/enter', function(request: FastifyRequest<{ Querystring: { register
   }
 });
 
-// fastify.get<{ Params: { postId: number } }>('/get_comments/:postId', async function(request, reply) {
-//   try {
-//     const comments = await db.getComments(request.params.postId);
-//     return reply.send(comments);
-//   } catch (error) {
-//     reply.code(500).send({
-//       error: `Failed to fetch comments for post #${postId}`
-//     });
-//   }
-// });
-
 fastify.route({
   method: "POST",
   url: "/post_comment",

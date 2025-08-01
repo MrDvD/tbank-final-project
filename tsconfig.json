@@ -8,5 +8,5 @@
     "moduleResolution": "bundler",
     "outDir": "target",
   },
-  "include": ["api/*"],
+  "include": ["api/*", "api/abstracts/validators.ts", "api/abstracts/types.ts", "api/objects/newsObjects.ts"],
 }

@@ -1,6 +1,5 @@
 import sql from './sql.js';
-
-export type Optional<T> = T | null;
+import { Optional } from './abstracts/types.js';
 
 // of course, this is not safe. at least i should rewrite it using hash function
 export async function register(login: string, password: string): Promise<Optional<number>> {
