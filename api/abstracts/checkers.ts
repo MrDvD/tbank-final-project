@@ -7,5 +7,6 @@ export interface CheckerResult {
 }
 
 export enum CheckerStatus {
-  CORRECT,
+  SUCCESS,
+  FAILURE
 }
