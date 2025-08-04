@@ -1,12 +1,15 @@
 {
   "compilerOptions": {
-    "module": "esnext",
+    "module": "es2022",
     "target": "es2022",
     "noImplicitAny": true,
     "removeComments": true,
+    "esModuleInterop": true,
     "preserveConstEnums": true,
     "moduleResolution": "bundler",
     "outDir": "target",
+    "strict": true,
+    "noEmit": true,
   },
-  "include": ["api/*", "api/abstracts/validators.ts", "api/abstracts/types.ts", "api/objects/newsObjects.ts"],
+  "include": ["api/**/*.ts"],
 }

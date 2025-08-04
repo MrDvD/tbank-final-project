@@ -1,18 +1,23 @@
 import { Checker, CheckerResult, CheckerStatus } from "../abstracts/checkers";
-import { CrudWorker } from "../abstracts/cruds";
+import { CrudSelectorBuilder, CrudWorker } from "../abstracts/cruds";
+import { NewsUser } from "../objects/database";
 
 type LoginPassword = { login: string, password: string };
 
-class LoginPasswordChecker implements Checker<LoginPassword> {
-  private worker: CrudWorker<LoginPassword, number>;
+// export class NewsUserChecker implements Checker<NewsUser> {
+//   private worker: CrudWorker<NewsUser, number>;
+//   private selector: CrudSelectorBuilder;
 
-  constructor(worker: CrudWorker<LoginPassword, number>) {
-    this.worker = worker;
-  }
+//   constructor(worker: CrudWorker<NewsUser, number>, selector: CrudSelectorBuilder) {
+//     this.worker = worker;
+//     this.selector = selector;
+//   }
 
-  check(pair: LoginPassword): CheckerResult {
-    return {
-      getStatus: () => CheckerStatus.FAILURE,
-    }
-  }
-}
+//   check(pair: LoginPassword): CheckerResult { // refactor logic
+//     if (this.worker.get(this.selector) !== null) {
+//       return { getStatus: () => CheckerStatus.SUCCESS };
+//     } else {
+//       return { getStatus: () => CheckerStatus.FAILURE };
+//     }
+//   }
+// }

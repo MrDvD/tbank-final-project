@@ -1,5 +1,3 @@
-// TODO: add builder classes for future (have no time rn for that)
-
 export interface NewsComment {
   post_id: number;
   author_id: number;

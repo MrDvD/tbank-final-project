@@ -5,7 +5,7 @@
   "main": "server.mjs",
   "type": "module",
   "scripts": {
-    "start": "vite build --emptyOutDir && tsc && nodejs target/server.js"
+    "start": "tsc && vite build && BUILD_LIB=true vite build && nodejs dist-api/backend-bundle.js"
   },
   "repository": {
     "type": "git",

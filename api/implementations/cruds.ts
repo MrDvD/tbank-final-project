@@ -10,25 +10,51 @@ export class NewsUserWorker implements CrudWorker<NewsUser, number> {
     this.sql = sql;
   }
 
-  public add(obj: NewsUser): Optional<NewsUser> {
-    return null;
+  public add(obj: NewsUser): Promise<Optional<NewsUser>> {
+    return this.sql<NewsUser[]>`
+      insert into USERS(login, full_name, password, description, photo_link)
+        values (${obj.login}, ${obj.full_name}, ${obj.password}, ${obj.description}, ${obj.photo_link})
+        returning *;
+    `.then(result => result[0] ? result[0] : null);
+  }
+
+  public get(selector: CrudSelectorBuilder): Promise<Set<NewsUser>> {
+    return this.sql<NewsUser[]>`
+      select * from USERS
+        where ${selector.build()};
+    `.then(result => new Set(result));
   }
   
-  public get(id: number): Optional<NewsUser>;
-  public get(selector: CrudSelectorBuilder): Set<NewsUser>;
-  public get(param: number | CrudSelectorBuilder): Optional<NewsUser> | Set<NewsUser> {
-    if (typeof param === "number") {
-      return null;
-    } else {
-      return new Set();
-    }
+  public update(id: number, obj: NewsUser): Promise<Optional<NewsUser>> {
+    return this.sql<NewsUser[]>`
+      update USERS
+      set login = ${obj.login}, full_name = ${obj.full_name}, password = ${obj.password}, description = ${obj.description}, photo_link = ${obj.photo_link}
+      where user_id = ${id}
+      returning *;
+    `.then(result => result[0] ? result[0] : null);
   }
-  
-  public update(id: number, obj: NewsUser): Optional<NewsUser> {
-    return null;
+
+  public remove(id: number): Promise<void> {
+    return this.sql`
+      delete from USERS
+      where user_id = ${id};
+    `.then(() => {});
   }
-  
-  public remove(id: number): void {
-    return;
+}
+
+export class PostgresSelectorBuilder implements CrudSelectorBuilder {
+  private conditions: string[] = [];
+
+  public init(): CrudSelectorBuilder {
+    return new PostgresSelectorBuilder();
+  }
+
+  public select(attr: string, value: string): CrudSelectorBuilder {
+    this.conditions.push(`${attr} = ${value}`);
+    return this;
+  }
+
+  public build(): string {
+    return this.conditions.join(" AND ");
   }
 }
