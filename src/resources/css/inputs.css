@@ -1,0 +1,63 @@
+@import "colors.css";
+@import "fonts.css";
+
+.field-input {
+  --input-background: var(--background-neutral-2);
+  --input-text: var(--text-secondary-1);
+  --input-border: transparent;
+
+  width: stretch;
+  box-sizing: border-box;
+  flex: 1 1 auto;
+
+  border-radius: 10px;
+  border: thin solid var(--input-border);
+  background-color: var(--input-background);
+  color: var(--input-text);
+  outline: none;
+
+  /* --input-text: var(--text-secondary-2); */
+
+  font-family: inherit;
+
+  &::placeholder {
+    color: var(--text-secondary-2);
+  }
+
+  &.small {
+    height: 32px;
+    padding: 0 10px;
+    border-radius: 8px;
+
+    font-size: 13px;
+  }
+
+  &.medium {
+    height: 56px;
+    padding: 6px 16px;
+    border-radius: 12px;
+
+    font-size: 15px;
+  }
+
+  &.large {
+    padding: 16px;
+    border-radius: 12px;
+    min-height: 116px;
+    resize: none;
+
+    font-size: 15px;
+
+    field-sizing: content;
+    overflow: hidden;
+  }
+
+  &:focus {
+    --input-background: var(--background-neutral-1);
+    --input-border: var(--background-neutral-3);
+  }
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    transition: border-color .2s linear, background-color .2s linear, color .2s linear;
+  }
+}

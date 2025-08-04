@@ -1,0 +1,70 @@
+@use "sizes.scss" as *;
+
+.account-info-main {
+  display: flex;
+  align-items: flex-start;
+
+  .account-picture-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    img {
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      object-fit: cover;
+
+      border: 3px solid var(--brand-pro-1);
+      padding: 2px;
+    }
+
+    .account-picture-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+
+  .account-description-block {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 10px;
+    flex: 1 1 auto;
+
+    color: var(--text-primary-1);
+
+    h1 {
+      font-family: "Tinkoff Sans";  
+      font-weight: 500;
+      font-size: 36px;
+    }
+    
+    p {
+      font-size: 15px;
+      line-height: 25px;
+    }
+  }
+}
+
+.create-post-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+@media (max-width: $desktop-width) {
+  .account-info-main {
+    flex-direction: column;
+
+    .account-picture-block {
+      flex-direction: row;
+      align-items: center;
+      align-self: center;
+      margin-bottom: 15px;
+    }
+  }
+}

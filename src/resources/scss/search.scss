@@ -1,0 +1,45 @@
+@use "sizes.scss" as *;
+@import "../css/cards.css";
+
+.window-root {
+  padding: 40px 0;
+  gap: 40px;
+
+  .search-filters {
+    display: flex;
+    gap: 4px;
+  }
+
+  .news-post {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+
+    flex-direction: column;
+    align-items: flex-end;
+
+    .news-comments {
+      max-width: 725px;
+      width: stretch;
+      display: none;
+
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 20px;
+
+      @media (max-width: $desktop-width) {
+        margin-left: 24px;
+      }
+    }
+  }
+
+  .stack-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .card-header {
+      padding: 0;
+    }
+  }
+}

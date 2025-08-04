@@ -1,0 +1,152 @@
+@import "fonts.css";
+@import "colors.css";
+
+.button {
+  --button-background: var(--background-neutral-1);
+  --button-text: var(--text-primary-on-accent);
+  --button-border: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+  font-family: inherit;
+  font-weight: inherit;
+
+  background-color: var(--button-background);
+  border: 1px solid var(--button-border);
+  outline: none;
+  color: var(--button-text);
+
+  user-select: none;
+
+  &.small {
+    height: 32px;
+    width: fit-content;
+
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 8px;
+  }
+
+  &.medium {
+    height: 44px;
+    flex: 1 1 auto;
+
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  &.primary {
+    --button-background: var(--background-accent-1);
+    --button-text: var(--text-primary-on-accent-1);
+  }
+
+  &.secondary {
+    --button-background: var(--background-neutral-1);
+    --button-text: var(--text-action-1);
+    --button-border: transparent;
+  }
+
+  &.tertiary {
+    --button-background: transparent;
+    --button-text: var(--text-action-1);
+    --button-border: var(--border-normal-1);
+  }
+
+  &.clear {
+    --button-background: transparent;
+    --button-text: var(--text-secondary-1);
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    text-decoration: none;
+  }
+
+  &.filter {
+    --button-background: transparent;
+    --button-text: var(--text-primary-1);
+    --button-border: var(--background-accent-1);
+
+    border: 2px solid var(--button-border);
+
+    &.inactive {
+      --button-border: var(--border-normal-1);
+    }
+  }
+
+  &.accent {
+    --button-background: var(--background-accent-4);
+    --button-text: var(--text-primary-on-dark-1);
+
+    padding: 4px 8px;
+    border-radius: 8px;
+  }
+
+  /* &:disabled {
+  } */
+
+  &:not(:disabled) {
+    @media screen and (hover: hover) {
+      &:hover {
+        --button-background: var(--background-neutral-2);
+
+        cursor: pointer;
+
+        &.primary {
+          --button-background: var(--background-accent-2);
+        }
+
+        &.filter {
+          --button-background: var(--background-neutral-1);
+        }
+
+        &.accent {
+          --button-background: var(--background-accent-5);
+        }
+      }
+    }
+
+    &:focus {
+      --button-border: var(--border-normal-1);
+
+      &.filter {
+        &.inactive {
+          --button-border: var(--border-normal-2);
+        }
+
+        &:not(.inactive) {
+          --button-border: var(--background-accent-2);
+        }
+      }
+    }
+
+    &:active {
+      --button-background: var(--background-neutral-3);
+
+      &.primary {
+        --button-background: var(--background-accent-3);
+      }
+
+      &.secondary {
+        --button-background: var(--background-neutral-3);
+      }
+
+      &.clear {
+        --button-border: var(--background-neutral-3);
+      }
+
+      &.accent {
+        --button-background: var(--background-accent-6);
+      }
+    }
+  }
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    transition: border-color .2s linear, background-color .2s linear, color .2s linear;
+  }
+}

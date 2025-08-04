@@ -1,0 +1,58 @@
+@import "inputs.css";
+@import "buttons.css";
+@import "fonts.css";
+@import "colors.css";
+
+.window-root {
+  .window-box {
+    max-width: 414px;
+    width: stretch;
+    margin: auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+
+    background-color: var(--background-elevation-1);
+    border-radius: 25px;
+    box-shadow: 0 6px 34px var(--shadow-medium-1);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .window-header {
+      height: 68px;
+      display: flex;
+      align-items: center;
+
+      font-family: "Tinkoff Sans";
+      font-weight: 500;
+      font-size: 16pt;
+      color: var(--text-primary-1);
+    }
+
+    .window-rows-container {
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .window-row {
+        display: flex;
+      }
+    }
+
+    .window-footer {
+      width: 100%;
+      padding: 24px;
+
+      display: flex;
+      flex-flow: row wrap-reverse;
+      gap: 12px;
+
+      .button {
+        flex: 1 1 40%;
+      }
+    }
+  }
+}
